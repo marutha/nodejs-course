@@ -1,0 +1,23 @@
+{
+  "name": "nodejs-course",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marutha/nodejs-course.git"
+  },
+  "author": "Maruthavanan Subbarayan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marutha/nodejs-course/issues"
+  },
+  "homepage": "https://github.com/marutha/nodejs-course#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
