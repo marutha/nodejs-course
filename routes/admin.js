@@ -6,25 +6,24 @@ const rootDir = require('../util/path');
 
 const router = express.Router();
 
-const products = [];
+const users = [];
 
-// /admin/add-product => GET
-router.get('/add-product', (req, res, next) => {
-  res.render('add-product',{
-    prods: products,
-    docTitle: 'Add Product',
-    path: '/admin/add-product',
-    formCSS: true,
-    productCSS: true,
-    activeAddProduct: true
-  });
-});
 
 // /admin/add-product => POST
-router.post('/add-product', (req, res, next) => {
-  products.push({ title: req.body.title });
+router.post('/add-user', (req, res, next) => {
+  console.log('pushing users' + req.body.name);
+  users.push({ name: req.body.name });
   res.redirect('/');
 });
 
+router.get('/users', (req, res, next) => {
+  console.log('users', users);
+  res.render('users', {
+    docTitle: 'User List',
+    users: users,
+    path: '/users'
+  });
+});
+
 exports.routes = router;
-exports.products = products;
+exports.users = users;

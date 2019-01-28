@@ -8,13 +8,12 @@ const adminData = require('./admin');
 const router = express.Router();
 
 router.get('/', (req, res, next) => {
-  const products = adminData.products;
-  res.render('shop', {
-    prods: products,
-    docTitle: 'Shop',
+  const users = adminData.users;
+  res.render('add-user', {
+    users: users,
+    docTitle: 'Users',
     path: '/',
-    hasProducts: products.length > 0,
-    activeShop: true,
+    activeUsers: true,
     productCSS: true
   });
 });
