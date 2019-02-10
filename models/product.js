@@ -29,11 +29,11 @@ module.exports = class Product {
   }
 
   save() {
-
-    
     getProductsFromFile(products => {
-      if(this.id) {
-        const existingProductIndex = products.findIndex(prod => prod.id == this.id);
+      if (this.id) {
+        const existingProductIndex = products.findIndex(
+          prod => prod.id === this.id
+        );
         const updatedProducts = [...products];
         updatedProducts[existingProductIndex] = this;
         fs.writeFile(p, JSON.stringify(updatedProducts), err => {
@@ -55,10 +55,10 @@ module.exports = class Product {
       const updatedProducts = products.filter(prod => prod.id !== id);
       fs.writeFile(p, JSON.stringify(updatedProducts), err => {
         if (!err) {
-          Cart.deleteProduct(id, product.price)
+          Cart.deleteProduct(id, product.price);
         }
       });
-    })
+    });
   }
 
   static fetchAll(cb) {
